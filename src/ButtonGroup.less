@@ -37,7 +37,7 @@ a.@{__button_group_prefix}-separated-item {
 }
 .@{__button_group_prefix}-separated-more-dropdown {
   .kuma-dropdown-menu>.kuma-dropdown-menu-item {
-    padding: 5px 16px;
+    padding: 6px 16px;
     &:hover {
       background: @normal-alpha-9;
     }
@@ -56,6 +56,17 @@ a.@{__button_group_prefix}-separated-item {
   &.@{__button_group_prefix}-separated-more-link-dropdown {
     .kuma-dropdown-menu>.kuma-dropdown-menu-item {
       padding: 5px 11px;
+    }
+  }
+  &-small {
+    .kuma-dropdown-menu>.kuma-dropdown-menu-item {
+      padding: 5px 16px;
+    }
+  }
+  &-large {
+    .kuma-dropdown-menu>.kuma-dropdown-menu-item {
+      padding: 7px 16px;
+      font-size: 14px;
     }
   }
 }

@@ -18,26 +18,30 @@ class ButtonGroup extends React.Component {
     className: PropTypes.string,
     locale: PropTypes.string,
     type: PropTypes.string,
+    size: PropTypes.string,
   }
 
   static defaultProps = {
     prefixCls: 'kuma-button-group',
     locale: 'zh-cn',
     type: 'outline',
+    size: 'medium',
   }
 
   render() {
-    const { children, separated, prefixCls, className, type } = this.props;
+    const { children, separated, prefixCls, className, type, size } = this.props;
+    const newChildren = React.Children.map(children, child => React.cloneElement(child, {
+      type: separated ? child.props.type : type,
+      size,
+    }));
     if (separated) {
       return (
         <Separated {...this.props} prefixCls={`${prefixCls}-separated`}>
-          {children}
+          {newChildren}
         </Separated>
       );
     }
-    const newChildren = React.Children.map(children, child => React.cloneElement(child, {
-      type,
-    }));
+
     return (
       <div
         className={classnames(prefixCls, {

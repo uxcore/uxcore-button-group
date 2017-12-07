@@ -11,10 +11,22 @@ import i18n from './i18n';
  * only consider the button style and how to collapse
  */
 
-const SeparatedItem = () => {};
-
 
 class Separated extends React.Component {
+  static propTypes = {
+    children: PropTypes.any,
+    locale: PropTypes.string,
+    maxLength: PropTypes.number,
+    onClick: PropTypes.func,
+    size: PropTypes.string,
+  };
+  static defaultProps = {
+    maxLength: 3,
+    locale: 'zh-cn',
+    onClick: () => {},
+    actionType: 'button',
+    size: 'medium',
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -88,7 +100,7 @@ class Separated extends React.Component {
 
   renderItem(item, index) {
     const me = this;
-    const { actionType, prefixCls } = me.props;
+    const { actionType, prefixCls, size } = me.props;
     const itemProps = {
       key: index,
       type: item.props.type,
@@ -103,7 +115,7 @@ class Separated extends React.Component {
       return (
         <Button
           {...itemProps}
-          size="small"
+          size={size}
           disabled={!!item.props.disabled}
         >
           {item.props.children}
@@ -168,7 +180,7 @@ class Separated extends React.Component {
     if (me.props.actionType === 'button') {
       return (
         <Dropdown {...dropdownOptions}>
-          <Button type={'secondary'} size="small">{content}</Button>
+          <Button type={'secondary'} size={me.props.size}>{content}</Button>
         </Dropdown>
       );
     }
@@ -183,7 +195,7 @@ class Separated extends React.Component {
 
   renderHoverMenu() {
     const me = this;
-    const { children, actionType, prefixCls } = me.props;
+    const { children, actionType, prefixCls, size } = me.props;
     let trigger;
     const options = [];
     React.Children.forEach(children, (child, index) => {
@@ -204,7 +216,7 @@ class Separated extends React.Component {
           trigger = (
             <Button
               type={child.props.type}
-              size="small"
+              size={size}
               ref={me.saveRef('triggerInstance')}
             >
               {triggerContent}
@@ -231,8 +243,12 @@ class Separated extends React.Component {
         {options}
       </Menu>
     );
-
-    const offsetY = actionType === 'button' ? -33 : -30;
+    const offsetYButtonMap = {
+      small: -33,
+      medium: -37,
+      large: -41,
+    };
+    const offsetY = actionType === 'button' ? offsetYButtonMap[size] : -30;
 
     const dropdownOptions = {
       key: 'icon',
@@ -246,6 +262,7 @@ class Separated extends React.Component {
       visible: me.state.dropdownVisible,
       overlayClassName: classnames({
         [`${me.props.prefixCls}-more-dropdown`]: true,
+        [`${me.props.prefixCls}-more-dropdown-${size}`]: actionType === 'button',
         [`${me.props.prefixCls}-more-link-dropdown`]: actionType === 'link',
       }),
       onVisibleChange: me.handleDropdownVisibleChange,
@@ -302,20 +319,5 @@ class Separated extends React.Component {
 }
 
 Separated.displayName = 'Separated';
-
-Separated.Item = SeparatedItem;
-
-Separated.propTypes = {
-  children: PropTypes.any,
-  locale: PropTypes.string,
-  maxLength: PropTypes.number,
-  onClick: PropTypes.func,
-};
-Separated.defaultProps = {
-  maxLength: 3,
-  locale: 'zh-cn',
-  onClick: () => {},
-  actionType: 'button',
-};
 
 export default Separated;

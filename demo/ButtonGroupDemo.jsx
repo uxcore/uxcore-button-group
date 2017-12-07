@@ -56,7 +56,7 @@ class Demo extends React.Component {
           <Button type="outline">Five</Button>
         </ButtonGroup>
         <h2>分隔形态(全部收起、Button 型)</h2>
-        <ButtonGroup separated maxLength={1}>
+        <ButtonGroup separated maxLength={1} size="medium">
           <Button type="outline">One</Button>
           <Button type="outline">Two</Button>
           <Button type="outline">Three</Button>
