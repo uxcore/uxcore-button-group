@@ -22,22 +22,22 @@ class Demo extends React.Component {
     return (
       <div>
         <h2>一级按钮</h2>
-        <ButtonGroup>
+        <ButtonGroup type="primary">
           <Button>Left</Button>
           <Button>Middle</Button>
           <Button>Right</Button>
         </ButtonGroup>
         <h2>二级按钮</h2>
-        <ButtonGroup>
-          <Button type="secondary">Left</Button>
-          <Button type="secondary">Middle</Button>
-          <Button type="secondary">Right</Button>
+        <ButtonGroup type="secondary">
+          <Button>Left</Button>
+          <Button>Middle</Button>
+          <Button>Right</Button>
         </ButtonGroup>
         <h2>outline</h2>
         <ButtonGroup>
-          <Button type="outline">Left</Button>
-          <Button type="outline">Middle</Button>
-          <Button type="outline">Right</Button>
+          <Button>Left</Button>
+          <Button>Middle</Button>
+          <Button>Right</Button>
         </ButtonGroup>
         <h2>分隔形态(全部展开、Button 型)</h2>
         <ButtonGroup separated maxLength={5}>

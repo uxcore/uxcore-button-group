@@ -280,9 +280,12 @@ class Separated extends React.Component {
     const { children, maxLength, actionType, prefixCls, className } = me.props;
     const buttons = [];
     const options = [];
+    const rootClassName = classnames(prefixCls, {
+      [className]: !!className,
+    });
     if (parseInt(maxLength, 10) === 1 && React.Children.count(children) > 1) {
       return (
-        <div>{me.renderHoverMenu()}</div>
+        <div className={rootClassName}>{me.renderHoverMenu()}</div>
       );
     }
     if (React.Children.count(children) <= parseInt(maxLength, 10)) {
@@ -307,9 +310,7 @@ class Separated extends React.Component {
 
     return (
       <div
-        className={classnames(prefixCls, {
-          [className]: !!className,
-        })}
+        className={rootClassName}
       >
         {buttons}
         {me.renderMore(options)}
