@@ -9,19 +9,29 @@
 @__button_group_prefix: kuma-button-group;
 .@{__button_group_prefix}-separated {
   display: inline-block;
-  .kuma-button {
-    margin-left: 12px;
-    vertical-align: top;
-  }
 }
 
 .@{__button_group_prefix}-separated-item {
+  &.kuma-button {
+    margin-left: 12px; // vertical-align: top;
+  }
   &-first {
     &.kuma-button {
       margin-left: 0px;
     }
   }
 }
+
+.@{__button_group_prefix}-separated-item-more {
+  &.kuma-button {
+    i,
+    icon {
+      vertical-align: middle;
+      margin-top: -1px;
+    }
+  }
+}
+
 a.@{__button_group_prefix}-separated-item {
   cursor: pointer;
   display: inline-block;
@@ -36,6 +46,7 @@ a.@{__button_group_prefix}-separated-item {
     font-size: 14px;
   }
 }
+
 .@{__button_group_prefix}-separated-more-dropdown {
   .kuma-dropdown-menu>.kuma-dropdown-menu-item {
     padding: 6px 16px;

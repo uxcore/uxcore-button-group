@@ -177,16 +177,17 @@ class Separated extends React.Component {
         />
       </span>
     );
+    const triggerClassName = classnames(`${me.props.prefixCls}-item`, `${me.props.prefixCls}-item-more`);
     if (me.props.actionType === 'button') {
       return (
         <Dropdown {...dropdownOptions}>
-          <Button type={'secondary'} size={me.props.size}>{content}</Button>
+          <Button type={'secondary'} size={me.props.size} className={triggerClassName}>{content}</Button>
         </Dropdown>
       );
     }
     return (
       <Dropdown {...dropdownOptions}>
-        <a className={`${me.props.prefixCls}-item`} onClick={me.handleMoreClick}>
+        <a className={triggerClassName} onClick={me.handleMoreClick}>
           {content}
         </a>
       </Dropdown>
