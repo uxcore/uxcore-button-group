@@ -1,6 +1,6 @@
 {
  "name": "uxcore-button-group",
- "version": "0.1.5",
+ "version": "0.1.6",
  "description": "uxcore-button-group component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-button-group.git",
  "author": "eternalsky",
@@ -49,7 +49,7 @@
   "prop-types": "15.x",
   "uxcore-button": "^0.4.15",
   "uxcore-dropdown": "^0.4.1",
-  "uxcore-menu": "^2.0.0"
+  "uxcore-menu": "^3.0.0"
  },
  "contributors": [],
  "license": "MIT"

@@ -1,5 +1,9 @@
 # history
 
+## 0.1.6
+
+* `CHANGED` update `uxcore-menu` to `^3.0.0` 
+
 ## 0.1.1
 
 * `NEW` support new prop `size`
