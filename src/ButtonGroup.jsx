@@ -56,4 +56,4 @@ class ButtonGroup extends React.Component {
 
 ButtonGroup.displayName = 'ButtonGroup';
 
-module.exports = ButtonGroup;
+export default ButtonGroup;
