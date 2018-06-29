@@ -30,19 +30,27 @@ class Separated extends React.Component {
     size: 'medium',
   };
 
-  static getDerivedStateFromProps = (props) => 
-    // if (React.Children.count(props.children) < parseInt(props.maxLength, 10)) {
-    //   return {
-    //     dropdownVisible: false,
-    //   };
-    // }
-     null
-  
+  static getDerivedStateFromProps = (props, state) => {
+    const childrenCount = React.Children.count(props.children);
+    if (childrenCount !== state.lastChildrenCount || props.maxLength !== state.lastMaxLength) {
+      const newState = {
+        lastChildrenCount: childrenCount,
+        lastMaxLength: props.maxLength,
+      };
+      if (React.Children.count(props.children) < parseInt(props.maxLength, 10)) {
+        newState.dropdownVisible = false;
+      }
+      return newState;
+    }
+    return null;
+  }
 
   constructor(props) {
     super(props);
     this.state = {
       dropdownVisible: false,
+      lastChildrenCount: React.Children.count(props.children),
+      lastMaxLength: props.maxLength,
     };
     this.handleDropdownVisibleChange = this.handleDropdownVisibleChange.bind(this);
     this.handleMoreClick = this.handleMoreClick.bind(this);
