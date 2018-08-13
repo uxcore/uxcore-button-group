@@ -1,5 +1,9 @@
 # history
 
+## 0.2.1
+
+* `NEW` export js style
+
 ## 0.2.0
 
 * `CHANGED` update `uxcore-dropdown` to `0.5.0`
