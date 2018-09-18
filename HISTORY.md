@@ -1,7 +1,15 @@
 # history
 
-## 0.1.7
+## 0.2.4
 `CHANGED` support js style export
+## 0.2.1
+
+* `NEW` export js style
+
+## 0.2.0
+
+* `CHANGED` update `uxcore-dropdown` to `0.5.0`
+* `CHANGED` adapt React@16
 
 ## 0.1.6
 

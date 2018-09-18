@@ -1,6 +1,6 @@
 {
   "name": "uxcore-button-group",
-  "version": "0.1.8",
+  "version": "0.2.4",
   "description": "uxcore-button-group component for uxcore.",
   "repository": "https://github.com/uxcore/uxcore-button-group.git",
   "author": "eternalsky",
@@ -33,23 +33,24 @@
   ],
   "devDependencies": {
     "console-polyfill": "^0.2.2",
-    "es5-shim": "^4.5.8",
-    "react": "15.x",
-    "react-dom": "15.x",
-    "react-test-renderer": "15.x",
+    "react": "16.x",
+    "react-dom": "16.x",
+    "react-test-renderer": "16.x",
     "expect.js": "~0.3.1",
-    "uxcore-tools": "0.2.x",
+    "uxcore-tools": "^0.3.0",
     "uxcore-kuma": "*",
     "kuma-base": "1.x",
     "enzyme": "^3.0.0",
-    "enzyme-adapter-react-15": "^1.0.0"
+    "babel-polyfill": "6.x",
+    "enzyme-adapter-react-16": "1.x"
   },
   "dependencies": {
     "classnames": "^2.1.2",
     "prop-types": "15.x",
+    "react-lifecycles-compat": "^3.0.4",
     "uxcore-button": "^0.4.15",
-    "uxcore-dropdown": "^0.4.1",
-    "uxcore-menu": "^3.0.0"
+    "uxcore-dropdown": "^0.5.0",
+    "uxcore-menu": "^4.0.0"
   },
   "contributors": [],
   "license": "MIT"

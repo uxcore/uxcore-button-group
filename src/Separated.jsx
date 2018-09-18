@@ -5,6 +5,7 @@ import Button from 'uxcore-button';
 import Dropdown from 'uxcore-dropdown';
 import Menu from 'uxcore-menu';
 import classnames from 'classnames';
+import { polyfill } from 'react-lifecycles-compat';
 import i18n from './i18n';
 
 /**
@@ -20,6 +21,7 @@ class Separated extends React.Component {
     onClick: PropTypes.func,
     size: PropTypes.string,
   };
+
   static defaultProps = {
     maxLength: 3,
     locale: 'zh-cn',
@@ -27,22 +29,32 @@ class Separated extends React.Component {
     actionType: 'button',
     size: 'medium',
   };
+
+  static getDerivedStateFromProps = (props, state) => {
+    const childrenCount = React.Children.count(props.children);
+    if (childrenCount !== state.lastChildrenCount || props.maxLength !== state.lastMaxLength) {
+      const newState = {
+        lastChildrenCount: childrenCount,
+        lastMaxLength: props.maxLength,
+      };
+      if (React.Children.count(props.children) < parseInt(props.maxLength, 10)) {
+        newState.dropdownVisible = false;
+      }
+      return newState;
+    }
+    return null;
+  }
+
   constructor(props) {
     super(props);
     this.state = {
       dropdownVisible: false,
+      lastChildrenCount: React.Children.count(props.children),
+      lastMaxLength: props.maxLength,
     };
     this.handleDropdownVisibleChange = this.handleDropdownVisibleChange.bind(this);
     this.handleMoreClick = this.handleMoreClick.bind(this);
     this.refCallback = [];
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (React.Children.count(nextProps.children) < parseInt(nextProps.maxLength, 10)) {
-      this.setState({
-        dropdownVisible: false,
-      });
-    }
   }
 
   componentDidUpdate() {
@@ -55,7 +67,9 @@ class Separated extends React.Component {
       /* eslint-disable react/no-find-dom-node */
       const triggerDOMnode = ReactDOM.findDOMNode(this.triggerInstance);
       /* eslint-enable react/no-find-dom-node */
-      dropdownDOMNode.style.minWidth = `${(triggerDOMnode || this.triggerInstance).offsetWidth}px`;
+      if (dropdownDOMNode) {
+        dropdownDOMNode.style.minWidth = `${(triggerDOMnode || this.triggerInstance).offsetWidth}px`;
+      }
     }
   }
 
@@ -321,5 +335,7 @@ class Separated extends React.Component {
 }
 
 Separated.displayName = 'Separated';
+
+polyfill(Separated);
 
 export default Separated;

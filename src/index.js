@@ -6,4 +6,4 @@
  * All rights reserved.
  */
 
-module.exports = require('./ButtonGroup');
+export default from './ButtonGroup';
