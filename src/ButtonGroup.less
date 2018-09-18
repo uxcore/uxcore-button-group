@@ -6,12 +6,12 @@
  * All rights reserved.
  */
 
-@__button_group_prefix: kuma-button-group;
-.@{__button_group_prefix}-separated {
+@__buttonGroupPrefixCls: kuma-button-group;
+.@{__buttonGroupPrefixCls}-separated {
   display: inline-block;
 }
 
-.@{__button_group_prefix}-separated-item {
+.@{__buttonGroupPrefixCls}-separated-item {
   &.kuma-button {
     margin-left: 12px; // vertical-align: top;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-.@{__button_group_prefix}-separated-item-more {
+.@{__buttonGroupPrefixCls}-separated-item-more {
   &.kuma-button {
     i,
     icon {
@@ -32,7 +32,7 @@
   }
 }
 
-a.@{__button_group_prefix}-separated-item {
+a.@{__buttonGroupPrefixCls}-separated-item {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
@@ -50,7 +50,7 @@ a.@{__button_group_prefix}-separated-item {
   }
 }
 
-.@{__button_group_prefix}-separated-more-dropdown {
+.@{__buttonGroupPrefixCls}-separated-more-dropdown {
   .kuma-dropdown-menu>.kuma-dropdown-menu-item {
     padding: 6px 16px;
     &:hover {
@@ -68,7 +68,7 @@ a.@{__button_group_prefix}-separated-item {
       }
     }
   }
-  &.@{__button_group_prefix}-separated-more-link-dropdown {
+  &.@{__buttonGroupPrefixCls}-separated-more-link-dropdown {
     .kuma-dropdown-menu>.kuma-dropdown-menu-item {
       padding: 5px 11px;
     }
@@ -86,13 +86,13 @@ a.@{__button_group_prefix}-separated-item {
   }
 }
 
-.@{__button_group_prefix}-separated-more-text {
+.@{__buttonGroupPrefixCls}-separated-more-text {
   vertical-align: baseline;
   .kuma-button & {
     vertical-align: top;
   }
 }
 
-.@{__button_group_prefix}-separated-split-line {
+.@{___buttonGroupPrefixCls}-separated-split-line {
   color: @split-line-color;
 }
