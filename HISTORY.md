@@ -1,5 +1,8 @@
 # history
 
+## 0.2.5 
+`CHANGED` filter null
+
 ## 0.2.4
 `CHANGED` support js style export
 ## 0.2.1

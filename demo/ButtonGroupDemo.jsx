@@ -6,28 +6,29 @@
  * All rights reserved.
  */
 
-import React from 'react';
-import Button from 'uxcore-button';
-import ButtonGroup from '../src';
-import 'kuma-base/core.less';
-import '../style';
+import React from 'react'
+import Button from 'uxcore-button'
+import ButtonGroup from '../src'
+import 'kuma-base/core.less'
+import '../style'
 
 
 class Demo extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      maxLength: 1,
-    };
+      maxLength: 1
+    }
   }
 
-  render() {
+  render () {
     return (
       <div>
         <h2>
           一级按钮
         </h2>
-        <ButtonGroup type="primary">
+        <ButtonGroup type='primary'>
+          {null}
           <Button>
             Left
           </Button>
@@ -41,7 +42,7 @@ class Demo extends React.Component {
         <h2>
           二级按钮
         </h2>
-        <ButtonGroup type="secondary">
+        <ButtonGroup type='secondary'>
           <Button>
             Left
           </Button>
@@ -70,19 +71,19 @@ class Demo extends React.Component {
           分隔形态(全部展开、Button 型)
         </h2>
         <ButtonGroup separated maxLength={5}>
-          <Button type="outline">
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
@@ -90,39 +91,39 @@ class Demo extends React.Component {
           分隔形态(部分收起、Button 型)
         </h2>
         <ButtonGroup separated maxLength={3}>
-          <Button type="outline">
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
         <h2>
           分隔形态(全部收起、Button 型)
         </h2>
-        <ButtonGroup separated maxLength={1} size="medium">
-          <Button type="outline">
+        <ButtonGroup separated maxLength={1} size='medium'>
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
@@ -130,85 +131,85 @@ class Demo extends React.Component {
           分隔形态(部分收起、Button 型、不同 Button Type)
         </h2>
         <ButtonGroup separated maxLength={4}>
-          <Button type="outline">
+          <Button type='outline'>
             One
           </Button>
-          <Button type="secondary">
+          <Button type='secondary'>
             Two
           </Button>
-          <Button type="secondary">
+          <Button type='secondary'>
             Three
           </Button>
-          <Button type="secondary">
+          <Button type='secondary'>
             Four
           </Button>
-          <Button type="secondary">
+          <Button type='secondary'>
             Five
           </Button>
         </ButtonGroup>
         <h2>
           分隔形态(全部展开、Link 型)
         </h2>
-        <ButtonGroup separated actionType="link" maxLength={5}>
-          <Button type="outline">
+        <ButtonGroup separated actionType='link' maxLength={5}>
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
         <h2>
           分隔形态(部分收起、Link 型)
         </h2>
-        <ButtonGroup separated actionType="link" maxLength={3}>
-          <Button type="outline">
+        <ButtonGroup separated actionType='link' maxLength={3}>
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
         <h2>
           分隔形态(全部收起、Link 型)
         </h2>
-        <ButtonGroup separated actionType="link" maxLength={1}>
-          <Button type="outline">
+        <ButtonGroup separated actionType='link' maxLength={1}>
+          <Button type='outline'>
             One
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Two
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Three
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Four
           </Button>
-          <Button type="outline">
+          <Button type='outline'>
             Five
           </Button>
         </ButtonGroup>
       </div>
-    );
+    )
   }
 }
 
-module.exports = Demo;
+module.exports = Demo

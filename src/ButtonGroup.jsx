@@ -30,7 +30,9 @@ class ButtonGroup extends React.Component {
 
   render() {
     const { children, separated, prefixCls, className, type, size } = this.props;
-    const newChildren = React.Children.map(children, child => React.cloneElement(child, {
+    const newChildren = React.Children.map(children.filter(child=>{
+      return child !== null
+    }), child => React.cloneElement(child, {
       type: separated ? child.props.type : type,
       size,
     }));
