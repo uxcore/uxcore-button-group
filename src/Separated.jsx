@@ -118,6 +118,8 @@ class Separated extends React.Component {
     const itemProps = {
       key: index,
       type: item.props.type,
+      ghost: item.props.ghost,
+      danger: item.props.danger,
       onClick: item.props.disabled ? (() => {}) : item.props.onClick,
       className: classnames({
         [item.props.className]: !!item.props.className,
@@ -313,6 +315,7 @@ class Separated extends React.Component {
     } else {
       React.Children.forEach(children, (item, index) => {
         if (index < parseInt(maxLength, 10) - 1) {
+        
           buttons.push(me.renderItem(item, index));
           if (actionType === 'link') {
             buttons.push(<span key={`button${index}`} className={`${me.props.prefixCls}-split-line`}>|</span>);

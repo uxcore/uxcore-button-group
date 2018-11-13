@@ -1,5 +1,8 @@
 # history
 
+## 0.2.6 
+`CHANGED` add danger and ghost
+
 ## 0.2.5 
 `CHANGED` filter null
 
