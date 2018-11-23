@@ -1,5 +1,8 @@
 # history
 
+## 0.2.7
+`FIX` button group only contain one button
+
 ## 0.2.6 
 `CHANGED` add danger and ghost
 
