@@ -5,4 +5,7 @@ export default {
   'zh-cn': {
     more: '更多',
   },
+  'zh-hk': {
+    more: '更多'
+  }
 };
